@@ -1,0 +1,41 @@
+package dev.xfj.logic;
+
+import dev.xfj.constant.Type;
+
+import java.util.Arrays;
+
+public class TypeEffectiveness {
+    //From: https://codegolf.stackexchange.com/questions/55823/its-super-effective
+    private static final String TYPE_CHART = """
+            222221201222222222\
+            421124104222214241\
+            242221421224122222\
+            222111210224222224\
+            220424124421422222\
+            214212421422224222\
+            211122211124242241\
+            022222242222242212\
+            222224221112124224\
+            222221424114224122\
+            222244222411222122\
+            221144121141222122\
+            224202222241122122\
+            242422221222212202\
+            224242221114221422\
+            222222221222222420\
+            212222242222242211\
+            242122221122222442""";
+
+    public static double getMultiplier(Type attackType, Type... defenderTypes) {
+        return Arrays.stream(defenderTypes)
+                .map(entry -> getTypeIndex(attackType, entry))
+                .map(TYPE_CHART::charAt)
+                .map(value -> Double.parseDouble(Character.toString(value)))
+                .mapToDouble(multiplier -> multiplier / 2.0)
+                .reduce(1.0, (a, b) -> a * b);
+    }
+
+    public static int getTypeIndex(Type attackType, Type defendType) {
+        return attackType.ordinal() * Type.values().length + defendType.ordinal();
+    }
+}
