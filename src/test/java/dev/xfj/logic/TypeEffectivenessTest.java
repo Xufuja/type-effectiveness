@@ -45,4 +45,12 @@ public class TypeEffectivenessTest {
     void HighEffectiveness() {
         assertEquals(4.0, TypeEffectiveness.getMultiplier(Type.FIGHTING, Type.NORMAL, Type.ROCK)) ;
     }
+
+    @Test
+    void singleTypeVersusTripleType() {
+        assertEquals(
+                TypeEffectiveness.getMultiplier(Type.FIGHTING, Type.NORMAL, Type.ROCK),
+                TypeEffectiveness.getMultiplier(Type.FIGHTING, Type.NORMAL, Type.ROCK, Type.BUG)
+        ) ;
+    }
 }

@@ -1,10 +1,13 @@
 package dev.xfj.logic;
 
 import dev.xfj.constant.Type;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 
 public class TypeEffectiveness {
+    private static final Logger log = LoggerFactory.getLogger(TypeEffectiveness.class);
     //From: https://codegolf.stackexchange.com/questions/55823/its-super-effective
     private static final String TYPE_CHART = """
             222221201222222222\
@@ -26,8 +29,12 @@ public class TypeEffectiveness {
             212222242222242211\
             242122221122222442""";
 
-    public static double getMultiplier(Type attackType, Type... defenderTypes) {
-        return Arrays.stream(defenderTypes)
+    public static double getMultiplier(Type attackType, Type... arguments) {
+        if (arguments.length > 2) {
+            log.warn("More than 2 defender types submitted, ignoring everything after the first 2!");
+        }
+
+        return Arrays.stream(Arrays.copyOfRange(arguments, 0, 2))
                 .map(entry -> getTypeIndex(attackType, entry))
                 .map(TYPE_CHART::charAt)
                 .map(value -> Double.parseDouble(Character.toString(value)))
