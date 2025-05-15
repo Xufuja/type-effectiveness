@@ -30,6 +30,10 @@ public class TypeEffectiveness {
             242122221122222442""";
 
     public static double getMultiplier(Type attackType, Type... arguments) {
+        if (arguments == null || arguments.length < 1) {
+            throw new IllegalArgumentException("At least 1 defender type required!");
+        }
+
         if (arguments.length > 2) {
             log.warn("More than 2 defender types submitted, ignoring everything after the first 2!");
         }
@@ -42,7 +46,7 @@ public class TypeEffectiveness {
                 .reduce(1.0, (a, b) -> a * b);
     }
 
-    public static int getTypeIndex(Type attackType, Type defendType) {
+    private static int getTypeIndex(Type attackType, Type defendType) {
         return attackType.ordinal() * Type.values().length + defendType.ordinal();
     }
 }
