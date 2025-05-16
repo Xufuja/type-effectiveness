@@ -59,4 +59,16 @@ public class TypeEffectivenessTest {
     void singleTypeVersusNoType() {
         assertThrows(IllegalArgumentException.class, () -> TypeEffectiveness.getMultiplier(Type.NORMAL));
     }
+
+    @Test
+    void noTypeVersusSingleType() {
+        assertThrows(IllegalArgumentException.class, () -> TypeEffectiveness.getMultiplier(null, Type.NORMAL));
+    }
+
+    @Test
+    void noTypeVersusNoType() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> TypeEffectiveness.getMultiplier(null));
+
+        assertEquals("No attack type provided!", exception.getMessage());
+    }
 }

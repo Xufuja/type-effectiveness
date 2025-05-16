@@ -30,6 +30,10 @@ public class TypeEffectiveness {
             242122221122222442""";
 
     public static double getMultiplier(Type attackType, Type... arguments) {
+        if (attackType == null) {
+            throw new IllegalArgumentException("No attack type provided!");
+        }
+
         if (arguments == null || arguments.length < 1) {
             throw new IllegalArgumentException("At least 1 defender type required!");
         }
