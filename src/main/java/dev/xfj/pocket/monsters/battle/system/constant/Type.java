@@ -1,4 +1,4 @@
-package dev.xfj.constant;
+package dev.xfj.pocket.monsters.battle.system.constant;
 
 public enum Type {
     NORMAL,

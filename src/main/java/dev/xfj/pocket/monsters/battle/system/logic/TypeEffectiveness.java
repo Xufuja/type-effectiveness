@@ -1,6 +1,6 @@
-package dev.xfj.logic;
+package dev.xfj.pocket.monsters.battle.system.logic;
 
-import dev.xfj.constant.Type;
+import dev.xfj.pocket.monsters.battle.system.constant.Type;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -42,7 +42,7 @@ public class TypeEffectiveness {
             log.warn("More than 2 defender types submitted, ignoring everything after the first 2!");
         }
 
-        return Arrays.stream(Arrays.copyOfRange(arguments, 0, 2))
+        return Arrays.stream(Arrays.copyOfRange(arguments, 0, Math.clamp(arguments.length, 1, 2)))
                 .map(entry -> getTypeIndex(attackType, entry))
                 .map(TYPE_CHART::charAt)
                 .map(value -> Double.parseDouble(Character.toString(value)))

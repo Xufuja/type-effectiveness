@@ -1,12 +1,14 @@
-package dev.xfj.logic;
+package dev.xfj.pocket.monsters.battle.system.logic;
 
-import dev.xfj.constant.Type;
+import dev.xfj.pocket.monsters.battle.system.constant.Type;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class TypeEffectivenessTest {
+@SpringBootTest
+class TypeEffectivenessTest {
     @Test
     void singleTypeVersusSingleType() {
         assertEquals(1.0, TypeEffectiveness.getMultiplier(Type.NORMAL, Type.FLYING));
