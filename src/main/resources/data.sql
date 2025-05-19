@@ -1,0 +1,1 @@
+INSERT INTO type_efficacy (damage_type_id, target_type_id, damage_factor) select * from csvread('classpath:data/csv/type_efficacy.csv')
