@@ -1,1 +1,2 @@
 INSERT INTO type_efficacy (damage_type_id, target_type_id, damage_factor) select * from csvread('classpath:data/csv/type_efficacy.csv')
+INSERT INTO types (id, identifier, generation_id, damage_class_id) select * from csvread('classpath:data/csv/types.csv')
