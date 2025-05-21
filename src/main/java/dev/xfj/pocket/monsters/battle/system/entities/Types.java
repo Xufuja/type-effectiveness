@@ -11,4 +11,20 @@ public class Types {
     private int generationId;
     @Column(name = "damage_class_id")
     private int damageClassId;
+
+    public int getId() {
+        return id;
+    }
+
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    public int getGenerationId() {
+        return generationId;
+    }
+
+    public int getDamageClassId() {
+        return damageClassId;
+    }
 }
