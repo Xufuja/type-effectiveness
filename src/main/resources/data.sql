@@ -1,2 +1,3 @@
-INSERT INTO type_efficacy (damage_type_id, target_type_id, damage_factor) select * from csvread('classpath:data/csv/type_efficacy.csv')
-INSERT INTO types (id, identifier, generation_id, damage_class_id) select * from csvread('classpath:data/csv/types.csv')
+INSERT INTO type_efficacy (damage_type_id,target_type_id,damage_factor) select * from csvread('classpath:data/csv/type_efficacy.csv')
+INSERT INTO types (id,identifier,generation_id,damage_class_id) select * from csvread('classpath:data/csv/types.csv')
+INSERT INTO moves (id,identifier,generation_id,type_id,power,pp,accuracy,priority,target_id,damage_class_id,effect_id,effect_chance,contest_type_id,contest_effect_id,super_contest_effect_id) select * from csvread('classpath:data/csv/moves.csv')

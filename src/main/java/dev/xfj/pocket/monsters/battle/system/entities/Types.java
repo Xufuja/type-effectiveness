@@ -5,14 +5,14 @@ import jakarta.persistence.*;
 @Entity
 public class Types {
     @Id
-    private int id;
+    private Integer id;
     private String identifier;
     @Column(name = "generation_id")
-    private int generationId;
+    private Integer generationId;
     @Column(name = "damage_class_id")
-    private int damageClassId;
+    private Integer damageClassId;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -20,11 +20,11 @@ public class Types {
         return identifier;
     }
 
-    public int getGenerationId() {
+    public Integer getGenerationId() {
         return generationId;
     }
 
-    public int getDamageClassId() {
+    public Integer getDamageClassId() {
         return damageClassId;
     }
 }

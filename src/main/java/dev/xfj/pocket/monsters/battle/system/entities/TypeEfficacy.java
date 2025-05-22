@@ -8,21 +8,25 @@ public class TypeEfficacy {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "damage_type_id")
-    private int damageTypeId;
+    private Integer damageTypeId;
     @Column(name = "target_type_id")
-    private int targetTypeId;
+    private Integer targetTypeId;
     @Column(name = "damage_factor")
-    private int damageFactor;
+    private Integer damageFactor;
 
-    public int getDamageTypeId() {
+    public Long getId() {
+        return id;
+    }
+
+    public Integer getDamageTypeId() {
         return damageTypeId;
     }
 
-    public int getTargetTypeId() {
+    public Integer getTargetTypeId() {
         return targetTypeId;
     }
 
-    public int getDamageFactor() {
+    public Integer getDamageFactor() {
         return damageFactor;
     }
 }
