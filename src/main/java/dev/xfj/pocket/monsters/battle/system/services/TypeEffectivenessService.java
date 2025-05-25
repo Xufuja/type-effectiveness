@@ -1,6 +1,5 @@
 package dev.xfj.pocket.monsters.battle.system.services;
 
-import dev.xfj.pocket.monsters.battle.system.constant.Type;
 import dev.xfj.pocket.monsters.battle.system.entities.TypeEfficacy;
 import dev.xfj.pocket.monsters.battle.system.entities.Types;
 import dev.xfj.pocket.monsters.battle.system.repositories.TypeEfficacyRepository;
@@ -26,7 +25,7 @@ public class TypeEffectivenessService {
         this.typesRepository = typesRepository;
     }
 
-    public double getMultiplier(Type attackType, Type... arguments) {
+    public double getMultiplier(dev.xfj.pocket.monsters.battle.system.constant.Type attackType, dev.xfj.pocket.monsters.battle.system.constant.Type... arguments) {
         if (attackType == null) {
             throw new IllegalArgumentException("No attack type provided!");
         }
@@ -45,7 +44,7 @@ public class TypeEffectivenessService {
                 .reduce(1.0, (a, b) -> a * b);
     }
 
-    private int getDamageFactor(Type attackType, Type defendType) {
+    private int getDamageFactor(dev.xfj.pocket.monsters.battle.system.constant.Type attackType, dev.xfj.pocket.monsters.battle.system.constant.Type defendType) {
         Optional<Types> attack = typesRepository.findByIdentifier(attackType.name().toLowerCase());
         Optional<Types> defend = typesRepository.findByIdentifier(defendType.name().toLowerCase());
 

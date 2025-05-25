@@ -3,3 +3,4 @@ INSERT INTO types (id,identifier,generation_id,damage_class_id) select * from cs
 INSERT INTO moves (id,identifier,generation_id,type_id,power,pp,accuracy,priority,target_id,damage_class_id,effect_id,effect_chance,contest_type_id,contest_effect_id,super_contest_effect_id) select * from csvread('classpath:data/csv/moves.csv')
 INSERT INTO generations (id,main_region_id,identifier) select * from csvread('classpath:data/csv/generations.csv')
 INSERT INTO move_targets (id,identifier) select * from csvread('classpath:data/csv/move_targets.csv')
+INSERT INTO pocket_monsters (id,identifier,species_id,height,weight,base_experience,order_,is_default) select * from csvread('classpath:data/csv/pocket_monsters.csv')
