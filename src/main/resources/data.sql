@@ -5,3 +5,4 @@ INSERT INTO generations (id,main_region_id,identifier) select * from csvread('cl
 INSERT INTO move_targets (id,identifier) select * from csvread('classpath:data/csv/move_targets.csv')
 INSERT INTO pocket_monsters (id,identifier,species_id,height,weight,base_experience,order_,is_default) select * from csvread('classpath:data/csv/pocket_monsters.csv')
 INSERT INTO pocket_monster_move_methods (id,identifier) select * from csvread('classpath:data/csv/pocket_monster_move_methods.csv')
+INSERT INTO pocket_monster_moves (pm_id,version_group_id,move_id,pm_move_method_id,level,order_) select * from csvread('classpath:data/csv/pocket_monster_moves.csv')

@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 public class TypeEfficacy {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     @Column(name = "damage_type_id")
     private Integer damageTypeId;
     @Column(name = "target_type_id")
@@ -14,7 +14,7 @@ public class TypeEfficacy {
     @Column(name = "damage_factor")
     private Integer damageFactor;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
