@@ -8,3 +8,4 @@ INSERT INTO pocket_monster_move_methods (id,identifier) select * from csvread('c
 INSERT INTO pocket_monster_moves (pm_id,version_group_id,move_id,pm_move_method_id,level,order_) select * from csvread('classpath:data/csv/pocket_monster_moves.csv')
 INSERT INTO pocket_monster_stats (pm_id,stat_id,base_stat,effort) select * from csvread('classpath:data/csv/pocket_monster_stats.csv')
 INSERT INTO pocket_monster_types (pm_id,type_id,slot) select * from csvread('classpath:data/csv/pocket_monster_types.csv')
+INSERT INTO pocket_monster_abilities (pm_id,ability_id,is_hidden,slot) select * from csvread('classpath:data/csv/pocket_monster_abilities.csv')
