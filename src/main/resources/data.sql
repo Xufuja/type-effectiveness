@@ -9,3 +9,4 @@ INSERT INTO pocket_monster_moves (pm_id,version_group_id,move_id,pm_move_method_
 INSERT INTO pocket_monster_stats (pm_id,stat_id,base_stat,effort) select * from csvread('classpath:data/csv/pocket_monster_stats.csv')
 INSERT INTO pocket_monster_types (pm_id,type_id,slot) select * from csvread('classpath:data/csv/pocket_monster_types.csv')
 INSERT INTO pocket_monster_abilities (pm_id,ability_id,is_hidden,slot) select * from csvread('classpath:data/csv/pocket_monster_abilities.csv')
+INSERT INTO pocket_monster_species (id,identifier,generation_id,evolves_from_species_id,evolution_chain_id,color_id,shape_id,habitat_id,gender_rate,capture_rate,base_happiness,is_baby,hatch_counter,has_gender_differences,growth_rate_id,forms_switchable,is_legendary,is_mythical,order_,conquest_order) select * from csvread('classpath:data/csv/pocket_monster_species.csv')
