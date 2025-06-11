@@ -13,3 +13,4 @@ INSERT INTO pocket_monster_species (id,identifier,generation_id,evolves_from_spe
 INSERT INTO pocket_monster_evolution (id,evolved_species_id,evolution_trigger_id,trigger_item_id,minimum_level,gender_id,location_id,held_item_id,time_of_day,known_move_id,known_move_type_id,minimum_happiness,minimum_beauty,minimum_affection,relative_physical_stats,party_species_id,party_type_id,trade_species_id,needs_overworld_rain,turn_upside_down) select * from csvread('classpath:data/csv/pocket_monster_evolution.csv')
 INSERT INTO pocket_monster_items (pm_id,version_id,item_id,rarity) select * from csvread('classpath:data/csv/pocket_monster_items.csv')
 INSERT INTO growth_rates (id,identifier,formula) select * from csvread('classpath:data/csv/growth_rates.csv')
+INSERT INTO abilities (id,identifier,generation_id,is_main_series) select * from csvread('classpath:data/csv/abilities.csv')
