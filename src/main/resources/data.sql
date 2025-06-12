@@ -14,3 +14,4 @@ INSERT INTO pocket_monster_evolution (id,evolved_species_id,evolution_trigger_id
 INSERT INTO pocket_monster_items (pm_id,version_id,item_id,rarity) select * from csvread('classpath:data/csv/pocket_monster_items.csv')
 INSERT INTO growth_rates (id,identifier,formula) select * from csvread('classpath:data/csv/growth_rates.csv')
 INSERT INTO abilities (id,identifier,generation_id,is_main_series) select * from csvread('classpath:data/csv/abilities.csv')
+INSERT INTO experience (growth_rate_id,level,experience) select * from csvread('classpath:data/csv/experience.csv')
