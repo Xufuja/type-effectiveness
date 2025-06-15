@@ -17,3 +17,4 @@ INSERT INTO abilities (id,identifier,generation_id,is_main_series) select * from
 INSERT INTO experience (growth_rate_id,level,experience) select * from csvread('classpath:data/csv/experience.csv')
 INSERT INTO move_meta_ailments (id,identifier) select * from csvread('classpath:data/csv/move_meta_ailments.csv')
 INSERT INTO move_meta_categories (id,identifier) select * from csvread('classpath:data/csv/move_meta_categories.csv')
+INSERT INTO move_meta_stat_changes (move_id,stat_id,change) select * from csvread('classpath:data/csv/move_meta_stat_changes.csv')
